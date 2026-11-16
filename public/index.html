@@ -117,7 +117,7 @@
       </nav>
 
       <!-- Action Buttons -->
-      <div class="flex items-center space-x-1.5">
+      <div class="flex items-center space-x-1 sm:space-x-1.5">
         <!-- Privacy Mode (Incognito Blur) Toggle -->
         <button onclick="window.app.togglePrivacyMode()" id="btn-privacy-toggle" title="Toggle Privacy Mode (Press 'P') to blur amounts in public" class="p-2 text-xs font-semibold text-slate-300 hover:text-white bg-slate-900/90 hover:bg-slate-800 border border-white/[0.08] rounded-xl transition flex items-center space-x-1 active:scale-95">
           <i data-lucide="eye" id="icon-privacy" class="w-3.5 h-3.5 text-indigo-400"></i>
@@ -125,57 +125,57 @@
         </button>
 
         <!-- Command Palette Trigger (Cmd+K) -->
-        <button onclick="window.app.openCommandPalette()" id="btn-cmd-palette" title="Quick Command Palette (Ctrl+K or ⌘K)" class="hidden xl:flex items-center space-x-1.5 px-2.5 py-1.5 text-xs text-slate-400 hover:text-white bg-slate-900/90 border border-white/[0.08] hover:border-slate-700 rounded-xl transition active:scale-95">
+        <button onclick="window.app.openCommandPalette()" id="btn-cmd-palette" title="Quick Command Palette (Ctrl+K or ⌘K)" class="hidden sm:flex items-center space-x-1.5 px-2.5 py-1.5 text-xs text-slate-400 hover:text-white bg-slate-900/90 border border-white/[0.08] hover:border-slate-700 rounded-xl transition active:scale-95">
           <i data-lucide="search" class="w-3.5 h-3.5"></i>
           <kbd class="px-1.5 py-0.5 text-[10px] font-mono bg-slate-800 text-slate-300 rounded border border-slate-700">⌘K</kbd>
         </button>
 
-        <!-- Custom Rules Manager -->
-        <button onclick="window.app.openRulesModal()" id="btn-rules-manager" title="Manage Custom Categorization Rules" class="p-2 text-xs font-semibold text-slate-300 hover:text-white bg-slate-900/90 hover:bg-slate-800 border border-white/[0.08] rounded-xl transition flex items-center space-x-1 active:scale-95">
+        <!-- Custom Rules Manager (Desktop only, available in More on mobile) -->
+        <button onclick="window.app.openRulesModal()" id="btn-rules-manager" title="Manage Custom Categorization Rules" class="hidden md:flex p-2 text-xs font-semibold text-slate-300 hover:text-white bg-slate-900/90 hover:bg-slate-800 border border-white/[0.08] rounded-xl transition items-center space-x-1 active:scale-95">
           <i data-lucide="sliders" class="w-3.5 h-3.5 text-amber-400"></i>
           <span class="hidden 2xl:inline text-[11px]">Rules</span>
         </button>
 
-        <!-- Executive Printable Report -->
-        <button onclick="window.app.openExecutiveReport()" id="btn-exec-report" title="Print or Save 1-Page Executive Financial Report" class="p-2 text-xs font-semibold text-slate-300 hover:text-white bg-slate-900/90 hover:bg-slate-800 border border-white/[0.08] rounded-xl transition flex items-center space-x-1 active:scale-95">
+        <!-- Executive Printable Report (Desktop only) -->
+        <button onclick="window.app.openExecutiveReport()" id="btn-exec-report" title="Print or Save 1-Page Executive Financial Report" class="hidden md:flex p-2 text-xs font-semibold text-slate-300 hover:text-white bg-slate-900/90 hover:bg-slate-800 border border-white/[0.08] rounded-xl transition items-center space-x-1 active:scale-95">
           <i data-lucide="printer" class="w-3.5 h-3.5 text-emerald-400"></i>
           <span class="hidden 2xl:inline text-[11px]">Report</span>
         </button>
 
-        <!-- Backup & Restore Snapshot -->
-        <button onclick="window.app.openBackupModal()" id="btn-backup-modal" title="Backup or Restore Complete Snapshot" class="p-2 text-xs font-semibold text-slate-300 hover:text-white bg-slate-900/90 hover:bg-slate-800 border border-white/[0.08] rounded-xl transition flex items-center space-x-1 active:scale-95">
+        <!-- Backup & Restore Snapshot (Desktop only) -->
+        <button onclick="window.app.openBackupModal()" id="btn-backup-modal" title="Backup or Restore Complete Snapshot" class="hidden md:flex p-2 text-xs font-semibold text-slate-300 hover:text-white bg-slate-900/90 hover:bg-slate-800 border border-white/[0.08] rounded-xl transition items-center space-x-1 active:scale-95">
           <i data-lucide="hard-drive" class="w-3.5 h-3.5 text-cyan-400"></i>
           <span class="hidden 2xl:inline text-[11px]">Backup</span>
         </button>
 
-        <!-- Clear All Data -->
-        <button onclick="window.app.clearAllData()" id="btn-clear-data" title="Remove all dummy/existing transactions" class="flex items-center space-x-1.5 px-2.5 py-1.5 text-xs font-semibold text-rose-400 hover:text-white bg-rose-500/10 hover:bg-rose-600 border border-rose-500/25 hover:border-rose-600 rounded-xl transition active:scale-95">
+        <!-- Clear All Data (Desktop only) -->
+        <button onclick="window.app.clearAllData()" id="btn-clear-data" title="Remove all dummy/existing transactions" class="hidden sm:flex items-center space-x-1.5 px-2.5 py-1.5 text-xs font-semibold text-rose-400 hover:text-white bg-rose-500/10 hover:bg-rose-600 border border-rose-500/25 hover:border-rose-600 rounded-xl transition active:scale-95">
           <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
           <span class="hidden sm:inline">Clear</span>
         </button>
 
-        <!-- Quick Sample / Reset -->
+        <!-- Quick Sample / Reset (Desktop only) -->
         <button onclick="window.app.resetSampleData()" id="btn-sample-data" title="Reset to Realistic HDFC Sample Statement" class="hidden lg:flex items-center space-x-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-300 hover:text-white bg-slate-900/90 hover:bg-slate-800 border border-white/[0.08] rounded-xl transition active:scale-95">
           <i data-lucide="rotate-ccw" class="w-3.5 h-3.5 text-slate-400"></i>
           <span>Sample</span>
         </button>
 
         <!-- Upload Bank Statement Button -->
-        <button onclick="window.app.openUploadModal()" class="flex items-center space-x-1.5 px-3 py-1.5 text-xs font-bold text-white bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 border border-indigo-400/30 rounded-xl shadow-lg shadow-indigo-600/25 transition transform active:scale-95">
+        <button onclick="window.app.openUploadModal()" class="flex items-center space-x-1 sm:space-x-1.5 px-2.5 sm:px-3 py-1.5 text-xs font-bold text-white bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 border border-indigo-400/30 rounded-xl shadow-lg shadow-indigo-600/25 transition transform active:scale-95">
           <i data-lucide="upload-cloud" class="w-3.5 h-3.5"></i>
-          <span class="hidden sm:inline">Upload</span>
+          <span class="hidden xs:inline sm:inline">Upload</span>
         </button>
 
         <!-- Add Manual Transaction Button -->
-        <button onclick="window.app.openAddTxModal()" class="flex items-center space-x-1.5 px-2.5 py-1.5 text-xs font-bold text-slate-200 hover:text-white bg-slate-900/90 hover:bg-slate-800 border border-white/[0.08] rounded-xl transition active:scale-95">
+        <button onclick="window.app.openAddTxModal()" class="flex items-center space-x-1 sm:space-x-1.5 px-2.5 py-1.5 text-xs font-bold text-slate-200 hover:text-white bg-slate-900/90 hover:bg-slate-800 border border-white/[0.08] rounded-xl transition active:scale-95">
           <i data-lucide="plus" class="w-3.5 h-3.5 text-emerald-400"></i>
           <span class="hidden sm:inline">Add</span>
         </button>
       </div>
     </div>
 
-    <!-- Mobile Tab Navigation Bar -->
-    <div class="xl:hidden border-t border-white/[0.06] px-4 py-2 flex items-center space-x-1 overflow-x-auto bg-[#07090E]/95 no-scrollbar">
+    <!-- Mobile Tab Navigation Bar (Horizontally Scrollable Pill Bar) -->
+    <div class="xl:hidden border-t border-white/[0.06] px-3 py-2 flex items-center space-x-1 overflow-x-auto bg-[#07090E]/95 touch-scroll">
       <button id="mob-nav-btn-overview" onclick="window.app.switchTab('overview')" class="nav-tab-btn active px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap">Overview</button>
       <button id="mob-nav-btn-categories" onclick="window.app.switchTab('categories')" class="nav-tab-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 hover:text-white whitespace-nowrap">Categories</button>
       <button id="mob-nav-btn-transactions" onclick="window.app.switchTab('transactions')" class="nav-tab-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 hover:text-white whitespace-nowrap">Ledger</button>
@@ -188,61 +188,64 @@
   </header>
 
   <!-- ================= SUB-BAR / TIMEFRAME SWITCHER ================= -->
-  <section class="bg-[#0A0E1A]/95 border-b border-white/[0.06] py-2.5 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+  <section class="bg-[#0A0E1A]/95 border-b border-white/[0.06] py-2 px-3 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-2.5">
       
       <!-- Period Switcher: Segmented Pill Control -->
-      <div class="flex items-center space-x-0.5 bg-slate-950/80 p-1 rounded-xl border border-white/[0.08]">
-        <button onclick="window.app.setPeriod('daily')" id="period-btn-daily" class="period-tab px-3 py-1 text-xs font-medium rounded-lg text-slate-400 hover:text-white transition">Daily</button>
-        <button onclick="window.app.setPeriod('weekly')" id="period-btn-weekly" class="period-tab px-3 py-1 text-xs font-medium rounded-lg text-slate-400 hover:text-white transition">Weekly</button>
-        <button onclick="window.app.setPeriod('monthly')" id="period-btn-monthly" class="period-tab px-3 py-1 text-xs font-semibold rounded-lg bg-indigo-600 text-white shadow-sm transition">Monthly</button>
-        <button onclick="window.app.setPeriod('yearly')" id="period-btn-yearly" class="period-tab px-3 py-1 text-xs font-medium rounded-lg text-slate-400 hover:text-white transition">Yearly</button>
-        <button onclick="window.app.setPeriod('all')" id="period-btn-all" class="period-tab px-3 py-1 text-xs font-medium rounded-lg text-slate-400 hover:text-white transition">All Time</button>
+      <div class="flex items-center space-x-0.5 bg-slate-950/80 p-1 rounded-xl border border-white/[0.08] overflow-x-auto touch-scroll">
+        <button onclick="window.app.setPeriod('daily')" id="period-btn-daily" class="period-tab px-2.5 sm:px-3 py-1 text-xs font-medium rounded-lg text-slate-400 hover:text-white transition whitespace-nowrap">Daily</button>
+        <button onclick="window.app.setPeriod('weekly')" id="period-btn-weekly" class="period-tab px-2.5 sm:px-3 py-1 text-xs font-medium rounded-lg text-slate-400 hover:text-white transition whitespace-nowrap">Weekly</button>
+        <button onclick="window.app.setPeriod('monthly')" id="period-btn-monthly" class="period-tab px-2.5 sm:px-3 py-1 text-xs font-semibold rounded-lg bg-indigo-600 text-white shadow-sm transition whitespace-nowrap">Monthly</button>
+        <button onclick="window.app.setPeriod('yearly')" id="period-btn-yearly" class="period-tab px-2.5 sm:px-3 py-1 text-xs font-medium rounded-lg text-slate-400 hover:text-white transition whitespace-nowrap">Yearly</button>
+        <button onclick="window.app.setPeriod('all')" id="period-btn-all" class="period-tab px-2.5 sm:px-3 py-1 text-xs font-medium rounded-lg text-slate-400 hover:text-white transition whitespace-nowrap">All Time</button>
       </div>
 
-      <!-- Date / Month Controls -->
-      <div class="flex items-center space-x-1.5 bg-slate-950/80 px-2 py-1 rounded-xl border border-white/[0.08]">
-        <button onclick="window.app.prevPeriod()" class="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition" title="Previous Period">
-          <i data-lucide="chevron-left" class="w-3.5 h-3.5"></i>
-        </button>
-        <span id="current-period-display" class="px-2 font-mono text-xs font-bold text-indigo-300">
-          November 2026
-        </span>
-        <button onclick="window.app.nextPeriod()" class="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition" title="Next Period">
-          <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-        </button>
-        <button onclick="window.app.jumpToCurrent()" class="text-[11px] px-2 py-0.5 rounded-md bg-slate-800/80 hover:bg-slate-700 text-slate-300 font-medium transition ml-1">
-          Current
-        </button>
-      </div>
-
-      <!-- Multi-Account Filter Dropdown -->
-      <div class="flex items-center space-x-2 bg-slate-950/80 px-3 py-1 rounded-xl border border-white/[0.08] text-xs">
-        <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
-        <select id="subbar-account-selector" onchange="window.app.setAccountFilter(this.value)" class="bg-transparent text-slate-200 font-medium focus:outline-none cursor-pointer text-xs pr-1">
-          <option value="all">All Accounts (Consolidated)</option>
-          <option value="hdfc_salary">HDFC Salary A/c (...3893)</option>
-          <option value="hdfc_cc">HDFC Credit Card (Regalia)</option>
-          <option value="secondary">Secondary Savings (ICICI/SBI)</option>
-        </select>
-      </div>
-
-      <!-- Quick Summary Pills -->
-      <div class="hidden xl:flex items-center space-x-3 text-xs">
-        <div class="flex items-center space-x-1.5 px-2.5 py-1 rounded-lg bg-blue-500/10 border border-blue-500/20">
-          <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-          <span class="text-blue-300 font-medium">Needs:</span>
-          <span id="quick-needs-stat" class="font-mono font-bold text-blue-200">₹0</span>
+      <!-- Date Controls & Multi-Account Selector (Ergonomic side-by-side on mobile) -->
+      <div class="flex items-center justify-between md:justify-end gap-2 w-full md:w-auto">
+        <!-- Date / Month Controls -->
+        <div class="flex items-center space-x-1 bg-slate-950/80 px-2 py-1 rounded-xl border border-white/[0.08]">
+          <button onclick="window.app.prevPeriod()" class="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition" title="Previous Period">
+            <i data-lucide="chevron-left" class="w-3.5 h-3.5"></i>
+          </button>
+          <span id="current-period-display" class="px-1.5 font-mono text-[11px] sm:text-xs font-bold text-indigo-300 whitespace-nowrap">
+            November 2026
+          </span>
+          <button onclick="window.app.nextPeriod()" class="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition" title="Next Period">
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </button>
+          <button onclick="window.app.jumpToCurrent()" class="text-[10px] sm:text-[11px] px-1.5 py-0.5 rounded-md bg-slate-800/80 hover:bg-slate-700 text-slate-300 font-medium transition">
+            Now
+          </button>
         </div>
-        <div class="flex items-center space-x-1.5 px-2.5 py-1 rounded-lg bg-amber-500/10 border border-amber-500/20">
-          <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-          <span class="text-amber-300 font-medium">Wants:</span>
-          <span id="quick-wants-stat" class="font-mono font-bold text-amber-200">₹0</span>
+
+        <!-- Multi-Account Filter Dropdown -->
+        <div class="flex items-center space-x-1.5 bg-slate-950/80 px-2.5 py-1 rounded-xl border border-white/[0.08] text-xs flex-1 md:flex-initial max-w-[200px] sm:max-w-none">
+          <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></div>
+          <select id="subbar-account-selector" onchange="window.app.setAccountFilter(this.value)" class="bg-transparent text-slate-200 font-medium focus:outline-none cursor-pointer text-[11px] sm:text-xs w-full truncate">
+            <option value="all">All Accounts</option>
+            <option value="hdfc_salary">HDFC Salary (...3893)</option>
+            <option value="hdfc_cc">HDFC Card (Regalia)</option>
+            <option value="secondary">Savings (ICICI/SBI)</option>
+          </select>
         </div>
-        <div class="flex items-center space-x-1.5 px-2.5 py-1 rounded-lg bg-fuchsia-500/10 border border-fuchsia-500/20">
-          <span class="w-1.5 h-1.5 rounded-full bg-fuchsia-400"></span>
-          <span class="text-fuchsia-300 font-medium">Luxury:</span>
-          <span id="quick-luxury-stat" class="font-mono font-bold text-fuchsia-200">₹0</span>
+
+        <!-- Quick Summary Pills (Desktop only) -->
+        <div class="hidden 2xl:flex items-center space-x-3 text-xs">
+          <div class="flex items-center space-x-1.5 px-2.5 py-1 rounded-lg bg-blue-500/10 border border-blue-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+            <span class="text-blue-300 font-medium">Needs:</span>
+            <span id="quick-needs-stat" class="font-mono font-bold text-blue-200">₹0</span>
+          </div>
+          <div class="flex items-center space-x-1.5 px-2.5 py-1 rounded-lg bg-amber-500/10 border border-amber-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+            <span class="text-amber-300 font-medium">Wants:</span>
+            <span id="quick-wants-stat" class="font-mono font-bold text-amber-200">₹0</span>
+          </div>
+          <div class="flex items-center space-x-1.5 px-2.5 py-1 rounded-lg bg-fuchsia-500/10 border border-fuchsia-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-fuchsia-400"></span>
+            <span class="text-fuchsia-300 font-medium">Luxury:</span>
+            <span id="quick-luxury-stat" class="font-mono font-bold text-fuchsia-200">₹0</span>
+          </div>
         </div>
       </div>
     </div>
@@ -376,133 +379,133 @@
       </div>
 
       <!-- TOP METRIC KPI CARDS -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
         
         <!-- Total Income Card (Clickable Drilldown) -->
-        <div onclick="window.app.openDrilldownModal('income')" class="glass-card rounded-2xl p-5 relative overflow-hidden group cursor-pointer hover:border-emerald-500/50 transition">
-          <div class="absolute -right-4 -bottom-4 w-28 h-28 bg-emerald-500/10 rounded-full blur-xl group-hover:bg-emerald-500/25 transition"></div>
-          <div class="flex items-center justify-between text-slate-400 text-xs font-semibold">
-            <span class="flex items-center space-x-1">
-              <span id="kpi-income-title-label">TOTAL INFLOWS</span>
-              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500 group-hover:text-emerald-400 transition"></i>
+        <div onclick="window.app.openDrilldownModal('income')" class="glass-card rounded-2xl p-3.5 sm:p-5 relative overflow-hidden group cursor-pointer hover:border-emerald-500/50 transition">
+          <div class="absolute -right-4 -bottom-4 w-20 sm:w-28 h-20 sm:h-28 bg-emerald-500/10 rounded-full blur-xl group-hover:bg-emerald-500/25 transition"></div>
+          <div class="flex items-center justify-between text-slate-400 text-[10px] sm:text-xs font-semibold">
+            <span class="flex items-center space-x-1 truncate">
+              <span id="kpi-income-title-label">INFLOWS</span>
+              <i data-lucide="chevron-right" class="w-3 h-3 text-slate-500 group-hover:text-emerald-400 transition hidden sm:inline"></i>
             </span>
-            <div class="w-9 h-9 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center border border-emerald-500/30 cat-avatar shadow-sm">
-              <i data-lucide="arrow-down-left" class="w-4 h-4"></i>
+            <div class="w-7 sm:w-9 h-7 sm:h-9 rounded-lg sm:rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center border border-emerald-500/30 cat-avatar shadow-sm flex-shrink-0">
+              <i data-lucide="arrow-down-left" class="w-3.5 sm:w-4 h-3.5 sm:h-4"></i>
             </div>
           </div>
-          <div class="mt-3">
-            <h3 id="kpi-total-income" class="text-2xl lg:text-3xl font-extrabold font-mono text-emerald-400">₹0</h3>
-            <div class="mt-2 flex flex-wrap gap-1 text-[10px] font-mono">
+          <div class="mt-2 sm:mt-3">
+            <h3 id="kpi-total-income" class="text-lg sm:text-2xl lg:text-3xl font-extrabold font-mono text-emerald-400 truncate">₹0</h3>
+            <div class="hidden sm:flex flex-wrap gap-1 text-[10px] font-mono mt-2">
               <span id="kpi-salary-pill" onclick="event.stopPropagation(); window.app.openDrilldownModal('salary')" class="px-2 py-0.5 rounded-md bg-emerald-950/80 text-emerald-300 border border-emerald-700/50 hover:bg-emerald-900 cursor-pointer transition">💼 Salary: ₹0</span>
               <span id="kpi-trading-pill" onclick="event.stopPropagation(); window.app.openDrilldownModal('investment_income')" class="px-2 py-0.5 rounded-md bg-cyan-950/80 text-cyan-300 border border-cyan-700/50 hover:bg-cyan-900 cursor-pointer transition">📈 Trading: ₹0</span>
               <span id="kpi-pf-pill" onclick="event.stopPropagation(); window.app.openDrilldownModal('pf_retirement')" class="px-2 py-0.5 rounded-md bg-teal-950/80 text-teal-300 border border-teal-700/50 hover:bg-teal-900 cursor-pointer transition">🛡️ PF: ₹0</span>
             </div>
-            <div class="flex items-center justify-between mt-2.5 text-[11px] text-slate-400">
+            <div class="flex items-center justify-between mt-2 sm:mt-2.5 text-[10px] sm:text-[11px] text-slate-400">
               <span id="kpi-income-tx-count">0 credits</span>
-              <span class="text-emerald-400 text-[10px] font-semibold flex items-center space-x-1 group-hover:underline">
-                <span>Inspect All</span>
-                <i data-lucide="arrow-right" class="w-3 h-3"></i>
+              <span class="text-emerald-400 font-semibold flex items-center space-x-0.5 group-hover:underline">
+                <span class="hidden sm:inline">Inspect</span>
+                <i data-lucide="arrow-right" class="w-2.5 sm:w-3 h-2.5 sm:h-3"></i>
               </span>
             </div>
           </div>
         </div>
 
         <!-- Total Expenses Card (Clickable Drilldown) -->
-        <div onclick="window.app.openDrilldownModal('expense')" class="glass-card rounded-2xl p-5 relative overflow-hidden group cursor-pointer hover:border-rose-500/50 transition">
-          <div class="absolute -right-4 -bottom-4 w-28 h-28 bg-rose-500/10 rounded-full blur-xl group-hover:bg-rose-500/25 transition"></div>
-          <div class="flex items-center justify-between text-slate-400 text-xs font-semibold">
-            <span class="flex items-center space-x-1">
-              <span>TOTAL OUTFLOWS</span>
-              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500 group-hover:text-rose-400 transition"></i>
+        <div onclick="window.app.openDrilldownModal('expense')" class="glass-card rounded-2xl p-3.5 sm:p-5 relative overflow-hidden group cursor-pointer hover:border-rose-500/50 transition">
+          <div class="absolute -right-4 -bottom-4 w-20 sm:w-28 h-20 sm:h-28 bg-rose-500/10 rounded-full blur-xl group-hover:bg-rose-500/25 transition"></div>
+          <div class="flex items-center justify-between text-slate-400 text-[10px] sm:text-xs font-semibold">
+            <span class="flex items-center space-x-1 truncate">
+              <span>OUTFLOWS</span>
+              <i data-lucide="chevron-right" class="w-3 h-3 text-slate-500 group-hover:text-rose-400 transition hidden sm:inline"></i>
             </span>
-            <div class="w-9 h-9 rounded-xl bg-rose-500/15 text-rose-400 flex items-center justify-center border border-rose-500/30 cat-avatar shadow-sm">
-              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            <div class="w-7 sm:w-9 h-7 sm:h-9 rounded-lg sm:rounded-xl bg-rose-500/15 text-rose-400 flex items-center justify-center border border-rose-500/30 cat-avatar shadow-sm flex-shrink-0">
+              <i data-lucide="arrow-up-right" class="w-3.5 sm:w-4 h-3.5 sm:h-4"></i>
             </div>
           </div>
-          <div class="mt-3">
-            <h3 id="kpi-total-expense" class="text-2xl lg:text-3xl font-extrabold font-mono text-rose-400">₹0</h3>
-            <div class="mt-2 flex flex-wrap gap-1 text-[10px] font-mono">
+          <div class="mt-2 sm:mt-3">
+            <h3 id="kpi-total-expense" class="text-lg sm:text-2xl lg:text-3xl font-extrabold font-mono text-rose-400 truncate">₹0</h3>
+            <div class="hidden sm:flex flex-wrap gap-1 text-[10px] font-mono mt-2">
               <span id="kpi-capital-pill" onclick="event.stopPropagation(); window.app.openDrilldownModal('trading_investment')" class="px-2 py-0.5 rounded-md bg-emerald-950/80 text-emerald-300 border border-emerald-700/50 hover:bg-emerald-900 cursor-pointer transition">📈 Trading Cap: ₹0</span>
               <span id="kpi-property-pill" onclick="event.stopPropagation(); window.app.openDrilldownModal('housing_property')" class="px-2 py-0.5 rounded-md bg-blue-950/80 text-blue-300 border border-blue-700/50 hover:bg-blue-900 cursor-pointer transition">🏢 Real Estate: ₹0</span>
             </div>
-            <div class="flex items-center justify-between mt-2.5 text-[11px] text-slate-400">
+            <div class="flex items-center justify-between mt-2 sm:mt-2.5 text-[10px] sm:text-[11px] text-slate-400">
               <span id="kpi-expense-tx-count">0 debits</span>
-              <span class="text-rose-400 text-[10px] font-semibold flex items-center space-x-1 group-hover:underline">
-                <span>Inspect All</span>
-                <i data-lucide="arrow-right" class="w-3 h-3"></i>
+              <span class="text-rose-400 font-semibold flex items-center space-x-0.5 group-hover:underline">
+                <span class="hidden sm:inline">Inspect</span>
+                <i data-lucide="arrow-right" class="w-2.5 sm:w-3 h-2.5 sm:h-3"></i>
               </span>
             </div>
           </div>
         </div>
 
         <!-- Net Savings / Capital Retention Card -->
-        <div onclick="window.app.openDrilldownModal('savings')" class="glass-card rounded-2xl p-5 relative overflow-hidden group cursor-pointer hover:border-indigo-500/50 transition">
-          <div class="absolute -right-4 -bottom-4 w-28 h-28 bg-indigo-500/10 rounded-full blur-xl group-hover:bg-indigo-500/25 transition"></div>
-          <div class="flex items-center justify-between text-slate-400 text-xs font-semibold">
-            <span class="flex items-center space-x-1">
-              <span>NET SURPLUS & WEALTH</span>
-              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500 group-hover:text-indigo-400 transition"></i>
+        <div onclick="window.app.openDrilldownModal('savings')" class="glass-card rounded-2xl p-3.5 sm:p-5 relative overflow-hidden group cursor-pointer hover:border-indigo-500/50 transition">
+          <div class="absolute -right-4 -bottom-4 w-20 sm:w-28 h-20 sm:h-28 bg-indigo-500/10 rounded-full blur-xl group-hover:bg-indigo-500/25 transition"></div>
+          <div class="flex items-center justify-between text-slate-400 text-[10px] sm:text-xs font-semibold">
+            <span class="flex items-center space-x-1 truncate">
+              <span>SURPLUS</span>
+              <i data-lucide="chevron-right" class="w-3 h-3 text-slate-500 group-hover:text-indigo-400 transition hidden sm:inline"></i>
             </span>
-            <div class="w-9 h-9 rounded-xl bg-indigo-500/15 text-indigo-400 flex items-center justify-center border border-indigo-500/30 cat-avatar shadow-sm">
-              <i data-lucide="wallet" class="w-4 h-4"></i>
+            <div class="w-7 sm:w-9 h-7 sm:h-9 rounded-lg sm:rounded-xl bg-indigo-500/15 text-indigo-400 flex items-center justify-center border border-indigo-500/30 cat-avatar shadow-sm flex-shrink-0">
+              <i data-lucide="wallet" class="w-3.5 sm:w-4 h-3.5 sm:h-4"></i>
             </div>
           </div>
-          <div class="mt-3">
-            <h3 id="kpi-net-savings" class="text-2xl lg:text-3xl font-extrabold font-mono text-indigo-400">₹0</h3>
-            <div class="flex items-center justify-between mt-3 text-[11px]">
-              <span class="text-slate-400">Retention Ratio:</span>
-              <span id="kpi-savings-rate-badge" class="font-mono font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+          <div class="mt-2 sm:mt-3">
+            <h3 id="kpi-net-savings" class="text-lg sm:text-2xl lg:text-3xl font-extrabold font-mono text-indigo-400 truncate">₹0</h3>
+            <div class="flex items-center justify-between mt-2 sm:mt-3 text-[10px] sm:text-[11px]">
+              <span class="text-slate-400 truncate">Retention:</span>
+              <span id="kpi-savings-rate-badge" class="font-mono font-bold px-1.5 sm:px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px]">
                 0%
               </span>
             </div>
-            <div class="flex items-center justify-between mt-2 text-[10px] text-slate-400">
-              <span id="kpi-daily-avg-spend">Avg ₹0/day</span>
-              <span class="text-indigo-400 underline">Wealth Details &rarr;</span>
+            <div class="flex items-center justify-between mt-1.5 sm:mt-2 text-[10px] text-slate-400">
+              <span id="kpi-daily-avg-spend" class="truncate">Avg ₹0/d</span>
+              <span class="text-indigo-400 underline hidden sm:inline">Details &rarr;</span>
             </div>
           </div>
         </div>
 
         <!-- Expense Trio Snapshot (Needs vs Wants vs Luxury) -->
-        <div onclick="window.app.openDrilldownModal('trio')" class="glass-card rounded-2xl p-5 relative overflow-hidden group cursor-pointer hover:border-fuchsia-500/50 transition">
-          <div class="flex items-center justify-between text-slate-400 text-xs font-semibold">
-            <span class="flex items-center space-x-1">
-              <span>DISCRETIONARY SPLIT</span>
-              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500 group-hover:text-fuchsia-400 transition"></i>
+        <div onclick="window.app.openDrilldownModal('trio')" class="glass-card rounded-2xl p-3.5 sm:p-5 relative overflow-hidden group cursor-pointer hover:border-fuchsia-500/50 transition">
+          <div class="flex items-center justify-between text-slate-400 text-[10px] sm:text-xs font-semibold">
+            <span class="flex items-center space-x-1 truncate">
+              <span>TRIO SPLIT</span>
+              <i data-lucide="chevron-right" class="w-3 h-3 text-slate-500 group-hover:text-fuchsia-400 transition hidden sm:inline"></i>
             </span>
-            <div class="w-9 h-9 rounded-xl bg-fuchsia-500/15 text-fuchsia-400 flex items-center justify-center border border-fuchsia-500/30 cat-avatar shadow-sm">
-              <i data-lucide="layers" class="w-4 h-4"></i>
+            <div class="w-7 sm:w-9 h-7 sm:h-9 rounded-lg sm:rounded-xl bg-fuchsia-500/15 text-fuchsia-400 flex items-center justify-center border border-fuchsia-500/30 cat-avatar shadow-sm flex-shrink-0">
+              <i data-lucide="layers" class="w-3.5 sm:w-4 h-3.5 sm:h-4"></i>
             </div>
           </div>
-          <div class="mt-2 space-y-1.5 text-xs">
+          <div class="mt-2 space-y-1 text-[11px]">
             <div class="flex justify-between items-center">
-              <span class="text-blue-400 font-medium flex items-center space-x-1.5">
-                <span class="w-2 h-2 rounded-full bg-blue-500"></span>
-                <span>Needs (50% target):</span>
+              <span class="text-blue-400 font-medium flex items-center space-x-1 truncate">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                <span>Needs:</span>
               </span>
               <span id="kpi-needs-percent" class="font-mono font-bold text-slate-200">0%</span>
             </div>
             <div class="flex justify-between items-center">
-              <span class="text-amber-400 font-medium flex items-center space-x-1.5">
-                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
-                <span>Wants (30% target):</span>
+              <span class="text-amber-400 font-medium flex items-center space-x-1 truncate">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                <span>Wants:</span>
               </span>
               <span id="kpi-wants-percent" class="font-mono font-bold text-slate-200">0%</span>
             </div>
             <div class="flex justify-between items-center">
-              <span class="text-fuchsia-400 font-medium flex items-center space-x-1.5">
-                <span class="w-2 h-2 rounded-full bg-fuchsia-500"></span>
-                <span>Luxury (10% target):</span>
+              <span class="text-fuchsia-400 font-medium flex items-center space-x-1 truncate">
+                <span class="w-1.5 h-1.5 rounded-full bg-fuchsia-500"></span>
+                <span>Luxury:</span>
               </span>
               <span id="kpi-luxury-percent" class="font-mono font-bold text-slate-200">0%</span>
             </div>
           </div>
-          <div class="text-right mt-2 text-[10px] text-fuchsia-400 underline">Trio Details &rarr;</div>
+          <div class="text-right mt-1.5 sm:mt-2 text-[10px] text-fuchsia-400 underline hidden sm:block">Details &rarr;</div>
         </div>
 
       </div>
 
       <!-- FORECAST, SAFE-TO-SPEND, BURN VELOCITY & EMERGENCY RUNWAY STRIP -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
         <!-- Month-End Spend Forecast -->
         <div class="glass-card rounded-2xl p-4 border border-slate-800 flex items-center justify-between">
           <div class="space-y-1">
@@ -1940,10 +1943,11 @@
             <div id="upi-qr-display" class="qr-container">
               <!-- Dynamically populated QR Code -->
             </div>
-            <div class="mt-3 space-y-1">
+            <div class="mt-3 space-y-2">
               <div id="upi-intent-amount-text" class="text-lg font-black font-mono text-white">₹500.00</div>
-              <a id="upi-deeplink-btn" href="#" class="inline-flex items-center space-x-1.5 text-xs text-violet-400 hover:text-violet-300 font-bold underline">
-                <span>Open UPI App on Mobile &rarr;</span>
+              <a id="upi-deeplink-btn" href="#" class="inline-flex items-center justify-center space-x-1.5 px-4 py-2.5 rounded-xl bg-violet-600 hover:bg-violet-500 text-white text-xs font-bold transition shadow-lg shadow-violet-600/30 w-full active:scale-95">
+                <i data-lucide="smartphone" class="w-4 h-4"></i>
+                <span>Tap to Pay with UPI App</span>
               </a>
             </div>
           </div>
@@ -2745,6 +2749,131 @@
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- ================= FLOATING MOBILE BOTTOM NAVIGATION DOCK ================= -->
+  <nav id="mobile-bottom-nav" class="fixed bottom-0 inset-x-0 z-40 bg-[#07090E]/90 backdrop-blur-2xl border-t border-white/[0.08] px-2 py-1.5 flex items-center justify-around xl:hidden shadow-2xl">
+    <button onclick="window.app.switchTab('overview')" id="dock-btn-overview" class="mob-dock-btn active flex flex-col items-center justify-center p-1.5 rounded-xl text-indigo-400 bg-indigo-500/10 transition min-w-[54px]">
+      <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+      <span class="text-[10px] font-semibold mt-0.5">Overview</span>
+    </button>
+    <button onclick="window.app.switchTab('categories')" id="dock-btn-categories" class="mob-dock-btn flex flex-col items-center justify-center p-1.5 rounded-xl text-slate-400 hover:text-white transition min-w-[54px]">
+      <i data-lucide="layers" class="w-4 h-4"></i>
+      <span class="text-[10px] font-semibold mt-0.5">Categories</span>
+    </button>
+    <button onclick="window.app.switchTab('transactions')" id="dock-btn-transactions" class="mob-dock-btn flex flex-col items-center justify-center p-1.5 rounded-xl text-slate-400 hover:text-white transition min-w-[54px]">
+      <i data-lucide="receipt" class="w-4 h-4"></i>
+      <span class="text-[10px] font-semibold mt-0.5">Ledger</span>
+    </button>
+    <button onclick="window.app.switchTab('subscriptions')" id="dock-btn-subscriptions" class="mob-dock-btn flex flex-col items-center justify-center p-1.5 rounded-xl text-slate-400 hover:text-white transition min-w-[54px]">
+      <i data-lucide="repeat" class="w-4 h-4"></i>
+      <span class="text-[10px] font-semibold mt-0.5">Subs</span>
+    </button>
+    <button onclick="window.app.openMobileMoreMenu()" id="dock-btn-more" class="mob-dock-btn flex flex-col items-center justify-center p-1.5 rounded-xl text-slate-400 hover:text-white transition min-w-[54px]">
+      <i data-lucide="grid" class="w-4 h-4"></i>
+      <span class="text-[10px] font-semibold mt-0.5">More</span>
+    </button>
+  </nav>
+
+  <!-- ================= MOBILE MORE ACTIONS & TABS SHEET ================= -->
+  <div id="modal-mobile-menu" class="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/80 backdrop-blur-sm hidden modal-backdrop">
+    <div class="bg-[#0F172A] border-t sm:border border-slate-800 rounded-t-3xl sm:rounded-3xl w-full max-w-md overflow-hidden shadow-2xl modal-content flex flex-col max-h-[85vh]">
+      <!-- Drag handle for mobile -->
+      <div class="pt-3 pb-1 flex justify-center sm:hidden">
+        <div class="w-10 h-1 rounded-full bg-slate-700"></div>
+      </div>
+      <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between">
+        <h3 class="font-bold text-sm text-white flex items-center space-x-2">
+          <i data-lucide="compass" class="w-4 h-4 text-indigo-400"></i>
+          <span>All Features & Tools</span>
+        </h3>
+        <button onclick="window.app.closeMobileMoreMenu()" class="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <div class="p-4 grid grid-cols-2 gap-2 text-xs overflow-y-auto">
+        <button onclick="window.app.closeMobileMoreMenu(); window.app.switchTab('tax');" class="p-3 rounded-2xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-left transition flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 border border-emerald-500/20">
+            <i data-lucide="percent" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <div class="font-bold text-slate-100">Tax Planner</div>
+            <div class="text-[10px] text-slate-400">80C / 80D / NPS</div>
+          </div>
+        </button>
+
+        <button onclick="window.app.closeMobileMoreMenu(); window.app.switchTab('splitwise');" class="p-3 rounded-2xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-left transition flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-xl bg-violet-500/15 text-violet-400 flex items-center justify-center flex-shrink-0 border border-violet-500/20">
+            <i data-lucide="users" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <div class="font-bold text-slate-100">Split Bill</div>
+            <div class="text-[10px] text-slate-400">UPI QR & Debts</div>
+          </div>
+        </button>
+
+        <button onclick="window.app.closeMobileMoreMenu(); window.app.switchTab('heatmap');" class="p-3 rounded-2xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-left transition flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-xl bg-cyan-500/15 text-cyan-400 flex items-center justify-center flex-shrink-0 border border-cyan-500/20">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <div class="font-bold text-slate-100">Heatmap</div>
+            <div class="text-[10px] text-slate-400">Daily Activity</div>
+          </div>
+        </button>
+
+        <button onclick="window.app.closeMobileMoreMenu(); window.app.switchTab('budget');" class="p-3 rounded-2xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-left transition flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-xl bg-indigo-500/15 text-indigo-400 flex items-center justify-center flex-shrink-0 border border-indigo-500/20">
+            <i data-lucide="target" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <div class="font-bold text-slate-100">50/30/20</div>
+            <div class="text-[10px] text-slate-400">Budget Framework</div>
+          </div>
+        </button>
+
+        <button onclick="window.app.closeMobileMoreMenu(); window.app.openRulesModal();" class="p-3 rounded-2xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-left transition flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-xl bg-amber-500/15 text-amber-400 flex items-center justify-center flex-shrink-0 border border-amber-500/20">
+            <i data-lucide="sliders" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <div class="font-bold text-slate-100">Rules Manager</div>
+            <div class="text-[10px] text-slate-400">Custom Category Rules</div>
+          </div>
+        </button>
+
+        <button onclick="window.app.closeMobileMoreMenu(); window.app.openExecutiveReport();" class="p-3 rounded-2xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-left transition flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0 border border-emerald-500/20">
+            <i data-lucide="printer" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <div class="font-bold text-slate-100">PDF Report</div>
+            <div class="text-[10px] text-slate-400">1-Page Printout</div>
+          </div>
+        </button>
+
+        <button onclick="window.app.closeMobileMoreMenu(); window.app.openBackupModal();" class="p-3 rounded-2xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-left transition flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-xl bg-cyan-500/15 text-cyan-400 flex items-center justify-center flex-shrink-0 border border-cyan-500/20">
+            <i data-lucide="hard-drive" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <div class="font-bold text-slate-100">Backup & Restore</div>
+            <div class="text-[10px] text-slate-400">JSON Snapshot</div>
+          </div>
+        </button>
+
+        <button onclick="window.app.closeMobileMoreMenu(); window.app.resetSampleData();" class="p-3 rounded-2xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-left transition flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-xl bg-slate-800 text-slate-300 flex items-center justify-center flex-shrink-0 border border-slate-700">
+            <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <div class="font-bold text-slate-100">Reset Sample</div>
+            <div class="text-[10px] text-slate-400">Demo HDFC Data</div>
+          </div>
+        </button>
+      </div>
     </div>
   </div>
 

@@ -169,6 +169,7 @@ class FinTrackApp {
     this.closeBudgetLimitsModal();
     this.closeSplitModal();
     this.closeChangeCategoryModal();
+    this.closeMobileMoreMenu();
     const anomModal = document.getElementById('modal-anomalies');
     if (anomModal) anomModal.classList.add('hidden');
 
@@ -212,6 +213,28 @@ class FinTrackApp {
         }
       }
     });
+
+    // Update mobile bottom dock buttons
+    ['overview', 'categories', 'transactions', 'subscriptions'].forEach(t => {
+      const dockBtn = document.getElementById(`dock-btn-${t}`);
+      if (dockBtn) {
+        if (t === tabName) {
+          dockBtn.className = 'mob-dock-btn active flex flex-col items-center justify-center p-1.5 rounded-xl text-indigo-400 bg-indigo-500/10 transition min-w-[54px]';
+        } else {
+          dockBtn.className = 'mob-dock-btn flex flex-col items-center justify-center p-1.5 rounded-xl text-slate-400 hover:text-white transition min-w-[54px]';
+        }
+      }
+    });
+
+    const moreTabs = ['tax', 'splitwise', 'heatmap', 'budget'];
+    const dockMore = document.getElementById('dock-btn-more');
+    if (dockMore) {
+      if (moreTabs.includes(tabName)) {
+        dockMore.className = 'mob-dock-btn active flex flex-col items-center justify-center p-1.5 rounded-xl text-indigo-400 bg-indigo-500/10 transition min-w-[54px]';
+      } else {
+        dockMore.className = 'mob-dock-btn flex flex-col items-center justify-center p-1.5 rounded-xl text-slate-400 hover:text-white transition min-w-[54px]';
+      }
+    }
 
     // Update global indicators & badges for current timeframe
     this.renderKPIs();
@@ -3490,6 +3513,17 @@ class FinTrackApp {
 
   closeCommandPalette() {
     const modal = document.getElementById('modal-command-palette');
+    if (modal) modal.classList.add('hidden');
+  }
+
+  openMobileMoreMenu() {
+    const modal = document.getElementById('modal-mobile-menu');
+    if (modal) modal.classList.remove('hidden');
+    if (window.lucide) window.lucide.createIcons();
+  }
+
+  closeMobileMoreMenu() {
+    const modal = document.getElementById('modal-mobile-menu');
     if (modal) modal.classList.add('hidden');
   }
 

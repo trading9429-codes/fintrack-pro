@@ -402,3 +402,94 @@ input[type="range"]::-webkit-slider-thumb:hover {
   border-color: rgba(99, 102, 241, 0.4);
   box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.55);
 }
+
+/* ================= MOBILE DEVICE SPECIFIC OPTIMIZATIONS ================= */
+
+/* Safe area support for bezel-less devices (iPhone notch/pill, Android gesture bar) */
+:root {
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-top: env(safe-area-inset-top, 0px);
+}
+
+body {
+  padding-bottom: calc(var(--safe-bottom) + 72px); /* Space for bottom dock on mobile */
+}
+
+@media (min-width: 1280px) {
+  body {
+    padding-bottom: 0;
+  }
+}
+
+/* Touch-optimized smooth scrolling */
+.touch-scroll {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.touch-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile Bottom Navigation Dock */
+.mob-dock-btn {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+.mob-dock-btn:active {
+  transform: scale(0.92);
+}
+
+/* Native-style Mobile Bottom Sheet for Modals */
+@media (max-width: 640px) {
+  .modal-backdrop {
+    align-items: flex-end !important;
+    padding: 0 !important;
+  }
+
+  .modal-content {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-top-left-radius: 24px !important;
+    border-top-right-radius: 24px !important;
+    max-height: 88vh !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    animation: slideUpMobile 0.26s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes slideUpMobile {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  /* Prevent auto-zoom on iOS inputs */
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  input[type="password"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  /* Touch-friendly min heights */
+  button, 
+  .period-tab, 
+  .cat-avatar {
+    touch-action: manipulation;
+  }
+}
+
+/* Touch active state feedback */
+button:active, 
+.period-tab:active, 
+.glass-card:active {
+  opacity: 0.92;
+}
