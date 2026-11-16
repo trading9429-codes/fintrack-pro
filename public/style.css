@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --bg-primary: #07090E;
+  --bg-secondary: #0D121E;
+  --bg-card: rgba(18, 26, 43, 0.65);
+  --bg-card-hover: rgba(26, 38, 64, 0.85);
+  --border-color: rgba(255, 255, 255, 0.07);
+  --border-highlight: rgba(99, 102, 241, 0.4);
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  
+  --color-salary: #10B981;
+  --color-trading: #06B6D4;
+  --color-need: #3B82F6;
+  --color-want: #F59E0B;
+  --color-luxury: #D946EF;
+  --color-savings: #22C55E;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.08) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(139, 92, 246, 0.04) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(244, 63, 94, 0.06) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.08) 0px, transparent 50%);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  overflow-x: hidden;
+  letter-spacing: -0.015em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/* Glassmorphism 2.0 with luminous micro-borders & deep shadows */
+.glass-panel {
+  background: rgba(13, 18, 30, 0.78);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.glass-card {
+  background: rgba(18, 26, 43, 0.65);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(99, 102, 241, 0.38);
+  box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.6), 0 0 22px -3px rgba(99, 102, 241, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Category Icon Avatars & Squircle Badges */
+.cat-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cat-avatar:hover {
+  transform: scale(1.08);
+  filter: brightness(1.2);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #07090E;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4F46E5;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Calendar Heatmap Squares */
+.heatmap-cell {
+  transition: transform 0.18s ease, filter 0.18s ease, box-shadow 0.18s ease;
+}
+.heatmap-cell:hover {
+  transform: scale(1.15);
+  z-index: 10;
+  filter: brightness(1.25);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.45);
+}
+
+/* Subtle glow animations */
+.glow-emerald {
+  box-shadow: 0 0 25px -4px rgba(16, 185, 129, 0.3);
+}
+.glow-rose {
+  box-shadow: 0 0 25px -4px rgba(244, 63, 94, 0.3);
+}
+.glow-indigo {
+  box-shadow: 0 0 25px -4px rgba(99, 102, 241, 0.3);
+}
+.glow-fuchsia {
+  box-shadow: 0 0 25px -4px rgba(217, 70, 239, 0.3);
+}
+.glow-cyan {
+  box-shadow: 0 0 25px -4px rgba(6, 182, 212, 0.3);
+}
+
+/* Modal animation */
+.modal-backdrop {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.modal-content {
+  animation: scaleUp 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Gradient text helpers */
+.text-gradient-silver {
+  background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 50%, #94A3B8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-emerald {
+  background: linear-gradient(135deg, #34D399 0%, #10B981 50%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-indigo {
+  background: linear-gradient(135deg, #818CF8 0%, #6366F1 50%, #4F46E5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-rose {
+  background: linear-gradient(135deg, #FB7185 0%, #F43F5E 50%, #E11D48 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Table styling */
+tbody tr {
+  transition: background-color 0.15s ease;
+}
+tbody tr:hover {
+  background-color: rgba(30, 41, 59, 0.45);
+}
+
+/* Silky Tab Transitions */
+@keyframes tabEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.995);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.tab-pane {
+  animation: tabEnter 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Modern Segmented Navigation Buttons */
+.nav-tab-btn {
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  font-weight: 600;
+}
+
+.nav-tab-btn:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-tab-btn.active {
+  background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px -1px rgba(99, 102, 241, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(129, 140, 248, 0.4) !important;
+}
+
+/* Period Tab Segmented Control */
+.period-tab {
+  transition: all 0.18s ease;
+}
+.period-tab:hover:not(.active) {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Category Card Interactive States */
+.category-card {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.category-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.5);
+}
+
+.category-card.selected-category {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%) !important;
+  border-color: rgba(99, 102, 241, 0.8) !important;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.4), 0 12px 28px -4px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Privacy Mode (Incognito Blur) */
+.privacy-mode .privacy-blur,
+.privacy-mode .font-mono:not(.no-blur) {
+  filter: blur(6px) !important;
+  user-select: none !important;
+  transition: filter 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.privacy-mode .privacy-blur:hover,
+.privacy-mode .font-mono:not(.no-blur):hover {
+  filter: blur(0px) !important;
+}
+
+/* Custom Interactive Sliders */
+input[type="range"] {
+  -webkit-appearance: none;
+  background: rgba(30, 41, 59, 0.8);
+  height: 6px;
+  border-radius: 9999px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #6366F1;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.6);
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: #818CF8;
+}
+
+/* Command Palette Animation */
+.command-palette-backdrop {
+  animation: fadeIn 0.15s ease-out;
+}
+
+.command-palette-box {
+  animation: scaleUp 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Print Stylesheet for Executive Monthly Report */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+  }
+  header, nav, section, #btn-privacy-toggle, #btn-clear-data, #btn-sample-data, .no-print {
+    display: none !important;
+  }
+  #report-printable-area {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+  }
+  .glass-panel, .glass-card {
+    background: #F8FAFC !important;
+    border: 1px solid #E2E8F0 !important;
+    box-shadow: none !important;
+    color: #0F172A !important;
+  }
+}
+
+/* Interactive Sankey Diagram Nodes & Flow Connectors */
+.sankey-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 175px;
+}
+
+.sankey-node {
+  padding: 8px 12px;
+  border-radius: 12px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+.sankey-node:hover {
+  transform: translateY(-2px) scale(1.02);
+  filter: brightness(1.2);
+  z-index: 10;
+}
+
+/* Budget Utilization Meters */
+.budget-meter-track {
+  height: 6px;
+  border-radius: 9999px;
+  background: rgba(30, 41, 59, 0.8);
+  overflow: hidden;
+}
+
+.budget-meter-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.5s ease-out;
+}
+
+/* Safe-to-Spend & Forecast Ring/Bar */
+.burn-meter-track {
+  height: 8px;
+  border-radius: 9999px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(51, 65, 85, 0.5);
+  overflow: hidden;
+}
+
+.burn-meter-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* UPI QR Code Container */
+.qr-container {
+  background: #FFFFFF;
+  padding: 14px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 28px -5px rgba(0, 0, 0, 0.55), 0 0 18px rgba(99, 102, 241, 0.25);
+}
+
+/* Subscription Card Hover Elevation */
+.sub-card {
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.sub-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.55);
+}

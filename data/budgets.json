@@ -1,0 +1,9 @@
+{
+  "dining": 15000,
+  "groceries": 20000,
+  "shopping": 12000,
+  "commute": 8000,
+  "utilities": 6000,
+  "entertainment": 5000,
+  "personal_care": 4000
+}

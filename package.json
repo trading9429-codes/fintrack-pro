@@ -1,0 +1,13 @@
+{
+  "name": "hdfc-expense-tracker",
+  "version": "1.0.0",
+  "description": "Smart Expense & Income Tracking Web App with HDFC Statement Auto-Identification, Needs/Wants/Luxury Grouping, Analytics & Calendar Heatmap",
+  "type": "module",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "keywords": ["expense-tracker", "hdfc-statement-parser", "finance", "analytics", "heat-map"],
+  "author": "",
+  "license": "MIT"
+}
